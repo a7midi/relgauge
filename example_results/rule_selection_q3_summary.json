@@ -1,0 +1,181 @@
+{
+  "verdict": "RULE-SELECTION SIGNAL: nonrandom rule structure supports nontrivial interface equalizers while random rules do not",
+  "equalizer_bound_violations": 0,
+  "random_selection_fraction_at_zero_mutation": 0.05,
+  "structured_selection_fraction_at_zero_mutation": 0.8,
+  "best_structured_selection_fraction_at_zero_mutation": 1.0,
+  "mean_selected_interface_mi_norm": 0.907327916491271,
+  "mean_unselected_interface_mi_norm": 0.26479602766965915,
+  "by_ensemble": [
+    {
+      "rule_ensemble": "block",
+      "mutation_rate": 0.0,
+      "eq_mode": "joint",
+      "n": 20,
+      "selection_fraction": 1.0,
+      "residual_qcoords": 0.6309297535714574,
+      "residual_per_width": 0.6309297535714574,
+      "cost_qcoords": 1.3690702464285427,
+      "shared_classes": 2.0,
+      "edge_density": 0.22222222222222224,
+      "interface_mi_norm": 0.831752065714278,
+      "interface_copy_accuracy": 1.0,
+      "interface_cond_entropy_bits": 0.0
+    },
+    {
+      "rule_ensemble": "canalizing",
+      "mutation_rate": 0.0,
+      "eq_mode": "joint",
+      "n": 20,
+      "selection_fraction": 1.0,
+      "residual_qcoords": 0.6309297535714574,
+      "residual_per_width": 0.6309297535714574,
+      "cost_qcoords": 1.3690702464285427,
+      "shared_classes": 2.0,
+      "edge_density": 0.22222222222222224,
+      "interface_mi_norm": 0.831752065714278,
+      "interface_copy_accuracy": 1.0,
+      "interface_cond_entropy_bits": 0.0
+    },
+    {
+      "rule_ensemble": "constant",
+      "mutation_rate": 0.0,
+      "eq_mode": "joint",
+      "n": 20,
+      "selection_fraction": 0.0,
+      "residual_qcoords": 0.0,
+      "residual_per_width": 0.0,
+      "cost_qcoords": 2.0,
+      "shared_classes": 1.0,
+      "edge_density": 0.11111111111111112,
+      "interface_mi_norm": 0.2,
+      "interface_copy_accuracy": 1.0,
+      "interface_cond_entropy_bits": 0.0
+    },
+    {
+      "rule_ensemble": "copy",
+      "mutation_rate": 0.0,
+      "eq_mode": "joint",
+      "n": 20,
+      "selection_fraction": 1.0,
+      "residual_qcoords": 1.0,
+      "residual_per_width": 1.0,
+      "cost_qcoords": 1.0,
+      "shared_classes": 3.0,
+      "edge_density": 0.3333333333333333,
+      "interface_mi_norm": 1.0,
+      "interface_copy_accuracy": 1.0,
+      "interface_cond_entropy_bits": 0.0
+    },
+    {
+      "rule_ensemble": "permutive",
+      "mutation_rate": 0.0,
+      "eq_mode": "joint",
+      "n": 20,
+      "selection_fraction": 1.0,
+      "residual_qcoords": 1.0,
+      "residual_per_width": 1.0,
+      "cost_qcoords": 1.0,
+      "shared_classes": 3.0,
+      "edge_density": 0.3333333333333333,
+      "interface_mi_norm": 1.0,
+      "interface_copy_accuracy": 1.0,
+      "interface_cond_entropy_bits": 0.0
+    },
+    {
+      "rule_ensemble": "random",
+      "mutation_rate": 0.0,
+      "eq_mode": "joint",
+      "n": 20,
+      "selection_fraction": 0.05,
+      "residual_qcoords": 0.03154648767857287,
+      "residual_per_width": 0.03154648767857287,
+      "cost_qcoords": 1.968453512321427,
+      "shared_classes": 1.05,
+      "edge_density": 0.5888888888888889,
+      "interface_mi_norm": 0.327526184316926,
+      "interface_copy_accuracy": 0.7011111111111111,
+      "interface_cond_entropy_bits": 0.7797895421883031
+    }
+  ],
+  "mutation_curves": [
+    {
+      "rule_ensemble": "block",
+      "eq_mode": "joint",
+      "selection_fraction_by_mutation": {
+        "0.0": 1.0
+      },
+      "residual_by_mutation": {
+        "0.0": 0.6309297535714574
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 0.831752065714278
+      }
+    },
+    {
+      "rule_ensemble": "canalizing",
+      "eq_mode": "joint",
+      "selection_fraction_by_mutation": {
+        "0.0": 1.0
+      },
+      "residual_by_mutation": {
+        "0.0": 0.6309297535714574
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 0.831752065714278
+      }
+    },
+    {
+      "rule_ensemble": "constant",
+      "eq_mode": "joint",
+      "selection_fraction_by_mutation": {
+        "0.0": 0.0
+      },
+      "residual_by_mutation": {
+        "0.0": 0.0
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 0.2
+      }
+    },
+    {
+      "rule_ensemble": "copy",
+      "eq_mode": "joint",
+      "selection_fraction_by_mutation": {
+        "0.0": 1.0
+      },
+      "residual_by_mutation": {
+        "0.0": 1.0
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 1.0
+      }
+    },
+    {
+      "rule_ensemble": "permutive",
+      "eq_mode": "joint",
+      "selection_fraction_by_mutation": {
+        "0.0": 1.0
+      },
+      "residual_by_mutation": {
+        "0.0": 1.0
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 1.0
+      }
+    },
+    {
+      "rule_ensemble": "random",
+      "eq_mode": "joint",
+      "selection_fraction_by_mutation": {
+        "0.0": 0.05
+      },
+      "residual_by_mutation": {
+        "0.0": 0.03154648767857287
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 0.327526184316926
+      }
+    }
+  ]
+}

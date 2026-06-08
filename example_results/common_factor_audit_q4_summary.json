@@ -1,0 +1,112 @@
+{
+  "verdict": "LIVE COMMON-FACTOR SIGNAL: exact winner labels carry source-dependent interface information",
+  "n_winners": 10,
+  "mean_exact_residual_qcoords": 1.0,
+  "full_width_residual_fraction": 1.0,
+  "live_common_factor_fraction": 1.0,
+  "mean_source_to_label_mi_over_label_entropy": 0.29184055632042594,
+  "mean_one_step_label_persistence_norm": null,
+  "mean_mutation_survival_at_max_rate": 0.475,
+  "top_winners": [
+    {
+      "candidate_index": 9,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.4170944738504804,
+      "label_balance": 0.9640243628550323,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.4
+    },
+    {
+      "candidate_index": 0,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.2779234543726421,
+      "label_balance": 0.9695502280838282,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.45
+    },
+    {
+      "candidate_index": 1,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.2779234543726421,
+      "label_balance": 0.9695502280838282,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.5
+    },
+    {
+      "candidate_index": 2,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.2779234543726421,
+      "label_balance": 0.9695502280838282,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.45
+    },
+    {
+      "candidate_index": 3,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.2779234543726421,
+      "label_balance": 0.9695502280838282,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.7
+    },
+    {
+      "candidate_index": 4,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.2779234543726421,
+      "label_balance": 0.9695502280838282,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.5
+    },
+    {
+      "candidate_index": 5,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.2779234543726421,
+      "label_balance": 0.9695502280838282,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.55
+    },
+    {
+      "candidate_index": 6,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.2779234543726421,
+      "label_balance": 0.9695502280838282,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.3
+    },
+    {
+      "candidate_index": 7,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.2779234543726421,
+      "label_balance": 0.9695502280838282,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.5
+    },
+    {
+      "candidate_index": 8,
+      "exact_shared_classes": 4,
+      "exact_residual_qcoords": 1.0,
+      "live_common_factor": true,
+      "source_to_label_mi_over_label_entropy": 0.2779234543726421,
+      "label_balance": 0.9695502280838282,
+      "one_step_label_persistence_norm": NaN,
+      "mutation_survival_at_max_rate": 0.4
+    }
+  ]
+}

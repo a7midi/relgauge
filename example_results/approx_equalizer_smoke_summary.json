@@ -1,0 +1,476 @@
+{
+  "verdict": "APPROX-EQUALIZER SIGNAL: noisy structured rules retain latent interface labels beyond exact |S|",
+  "approximate_equalizer_bound_violations": 0,
+  "default_threshold": 0.2,
+  "random_exact_selection_at_zero_mutation": 0.0,
+  "structured_exact_selection_at_zero_mutation": 1.0,
+  "random_approx_selection_at_zero_mutation": 0.0,
+  "structured_approx_selection_at_zero_mutation": 1.0,
+  "mean_structured_mutation_approx_minus_exact": 0.0553406353786946,
+  "mean_selected_interface_mi_norm": 0.8698012615184315,
+  "mean_unselected_interface_mi_norm": 0.5675637920136786,
+  "by_ensemble": [
+    {
+      "rule_ensemble": "block",
+      "mutation_rate": 0.0,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 1.0,
+      "approx_selection_fraction": 1.0,
+      "exact_residual_qcoords": 0.6309297535714574,
+      "approx_residual_qcoords": 0.6309297535714574,
+      "approx_info_qcoords": 0.5793801642856949,
+      "approx_classes": 2.0,
+      "same_component_mass": 1.0,
+      "cross_component_mass": 0.0,
+      "kept_mass": 1.0,
+      "component_balance": 0.9182958340544897,
+      "interface_mi_norm": 0.831752065714278,
+      "interface_copy_accuracy": 1.0
+    },
+    {
+      "rule_ensemble": "block",
+      "mutation_rate": 0.05,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.6,
+      "approx_selection_fraction": 0.6,
+      "exact_residual_qcoords": 0.37855785214287446,
+      "approx_residual_qcoords": 0.37855785214287446,
+      "approx_info_qcoords": 0.35218822776741154,
+      "approx_classes": 1.6,
+      "same_component_mass": 0.9777777777777776,
+      "cross_component_mass": 0.0,
+      "kept_mass": 0.9777777777777779,
+      "component_balance": 0.5582051342067889,
+      "interface_mi_norm": 0.7723600375553813,
+      "interface_copy_accuracy": 0.9555555555555555
+    },
+    {
+      "rule_ensemble": "block",
+      "mutation_rate": 0.1,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.2,
+      "approx_selection_fraction": 0.4,
+      "exact_residual_qcoords": 0.12618595071429148,
+      "approx_residual_qcoords": 0.25237190142858296,
+      "approx_info_qcoords": 0.18855842696693634,
+      "approx_classes": 1.4,
+      "same_component_mass": 0.9166666666666667,
+      "cross_component_mass": 0.016666666666666666,
+      "kept_mass": 0.8722222222222221,
+      "component_balance": 0.3584553764363695,
+      "interface_mi_norm": 0.7261917011107754,
+      "interface_copy_accuracy": 0.9199999999999999
+    },
+    {
+      "rule_ensemble": "canalizing",
+      "mutation_rate": 0.0,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 1.0,
+      "approx_selection_fraction": 1.0,
+      "exact_residual_qcoords": 0.6309297535714574,
+      "approx_residual_qcoords": 0.6309297535714574,
+      "approx_info_qcoords": 0.5793801642856949,
+      "approx_classes": 2.0,
+      "same_component_mass": 1.0,
+      "cross_component_mass": 0.0,
+      "kept_mass": 1.0,
+      "component_balance": 0.9182958340544897,
+      "interface_mi_norm": 0.831752065714278,
+      "interface_copy_accuracy": 1.0
+    },
+    {
+      "rule_ensemble": "canalizing",
+      "mutation_rate": 0.05,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.6,
+      "approx_selection_fraction": 0.6,
+      "exact_residual_qcoords": 0.37855785214287446,
+      "approx_residual_qcoords": 0.37855785214287446,
+      "approx_info_qcoords": 0.3420361951785016,
+      "approx_classes": 1.6,
+      "same_component_mass": 0.9888888888888889,
+      "cross_component_mass": 0.0,
+      "kept_mass": 0.9888888888888889,
+      "component_balance": 0.5421145432472674,
+      "interface_mi_norm": 0.7716178888887165,
+      "interface_copy_accuracy": 0.9511111111111111
+    },
+    {
+      "rule_ensemble": "canalizing",
+      "mutation_rate": 0.1,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.4,
+      "approx_selection_fraction": 0.4,
+      "exact_residual_qcoords": 0.25237190142858296,
+      "approx_residual_qcoords": 0.25237190142858296,
+      "approx_info_qcoords": 0.19789973011844258,
+      "approx_classes": 1.4,
+      "same_component_mass": 0.9666666666666666,
+      "cross_component_mass": 0.0,
+      "kept_mass": 0.9666666666666666,
+      "component_balance": 0.3136636511405687,
+      "interface_mi_norm": 0.7165125278036945,
+      "interface_copy_accuracy": 0.9555555555555555
+    },
+    {
+      "rule_ensemble": "copy",
+      "mutation_rate": 0.0,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 1.0,
+      "approx_selection_fraction": 1.0,
+      "exact_residual_qcoords": 1.0,
+      "approx_residual_qcoords": 1.0,
+      "approx_info_qcoords": 0.9999999999999998,
+      "approx_classes": 3.0,
+      "same_component_mass": 1.0,
+      "cross_component_mass": 0.0,
+      "kept_mass": 1.0,
+      "component_balance": 1.0,
+      "interface_mi_norm": 1.0,
+      "interface_copy_accuracy": 1.0
+    },
+    {
+      "rule_ensemble": "copy",
+      "mutation_rate": 0.05,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.8,
+      "approx_selection_fraction": 0.8,
+      "exact_residual_qcoords": 0.7261859507142915,
+      "approx_residual_qcoords": 0.7261859507142915,
+      "approx_info_qcoords": 0.715876032857139,
+      "approx_classes": 2.4,
+      "same_component_mass": 1.0,
+      "cross_component_mass": 0.0,
+      "kept_mass": 0.9888888888888889,
+      "component_balance": 0.7836591668108979,
+      "interface_mi_norm": 0.9299515148571371,
+      "interface_copy_accuracy": 0.9733333333333333
+    },
+    {
+      "rule_ensemble": "copy",
+      "mutation_rate": 0.1,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.0,
+      "approx_selection_fraction": 0.8,
+      "exact_residual_qcoords": 0.0,
+      "approx_residual_qcoords": 0.5047438028571659,
+      "approx_info_qcoords": 0.28049059641537977,
+      "approx_classes": 1.8,
+      "same_component_mass": 0.9,
+      "cross_component_mass": 0.06944444444444445,
+      "kept_mass": 0.9,
+      "component_balance": 0.6825513314313284,
+      "interface_mi_norm": 0.8067517730791905,
+      "interface_copy_accuracy": 0.9111111111111111
+    },
+    {
+      "rule_ensemble": "permutive",
+      "mutation_rate": 0.0,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 1.0,
+      "approx_selection_fraction": 1.0,
+      "exact_residual_qcoords": 1.0,
+      "approx_residual_qcoords": 1.0,
+      "approx_info_qcoords": 0.9999999999999998,
+      "approx_classes": 3.0,
+      "same_component_mass": 1.0,
+      "cross_component_mass": 0.0,
+      "kept_mass": 1.0,
+      "component_balance": 1.0,
+      "interface_mi_norm": 1.0,
+      "interface_copy_accuracy": 1.0
+    },
+    {
+      "rule_ensemble": "permutive",
+      "mutation_rate": 0.05,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.4,
+      "approx_selection_fraction": 0.8,
+      "exact_residual_qcoords": 0.32618595071429146,
+      "approx_residual_qcoords": 0.8,
+      "approx_info_qcoords": 0.5978835850359403,
+      "approx_classes": 2.6,
+      "same_component_mass": 0.9185185185185185,
+      "cross_component_mass": 0.07037037037037036,
+      "kept_mass": 0.9185185185185185,
+      "component_balance": 0.7412571384226955,
+      "interface_mi_norm": 0.9026523411428483,
+      "interface_copy_accuracy": 0.96
+    },
+    {
+      "rule_ensemble": "permutive",
+      "mutation_rate": 0.1,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.4,
+      "approx_selection_fraction": 0.4,
+      "exact_residual_qcoords": 0.32618595071429146,
+      "approx_residual_qcoords": 0.32618595071429146,
+      "approx_info_qcoords": 0.2820236972613036,
+      "approx_classes": 1.6,
+      "same_component_mass": 0.9944444444444445,
+      "cross_component_mass": 0.0,
+      "kept_mass": 0.9944444444444445,
+      "component_balance": 0.33000448432967083,
+      "interface_mi_norm": 0.864209073555385,
+      "interface_copy_accuracy": 0.9422222222222223
+    },
+    {
+      "rule_ensemble": "random",
+      "mutation_rate": 0.0,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.0,
+      "approx_selection_fraction": 0.0,
+      "exact_residual_qcoords": 0.0,
+      "approx_residual_qcoords": 0.0,
+      "approx_info_qcoords": 0.0,
+      "approx_classes": 1.0,
+      "same_component_mass": 0.9675925925925926,
+      "cross_component_mass": 0.0,
+      "kept_mass": 0.9675925925925926,
+      "component_balance": 0.0,
+      "interface_mi_norm": 0.31487721287243575,
+      "interface_copy_accuracy": 0.6933333333333332
+    },
+    {
+      "rule_ensemble": "random",
+      "mutation_rate": 0.05,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.0,
+      "approx_selection_fraction": 0.0,
+      "exact_residual_qcoords": 0.0,
+      "approx_residual_qcoords": 0.0,
+      "approx_info_qcoords": 0.0,
+      "approx_classes": 1.0,
+      "same_component_mass": 0.9305555555555556,
+      "cross_component_mass": 0.0,
+      "kept_mass": 0.9273148148148149,
+      "component_balance": 0.0,
+      "interface_mi_norm": 0.4461468001367881,
+      "interface_copy_accuracy": 0.7333333333333333
+    },
+    {
+      "rule_ensemble": "random",
+      "mutation_rate": 0.1,
+      "threshold": 0.2,
+      "threshold_mode": "conditional",
+      "n": 5,
+      "exact_selection_fraction": 0.0,
+      "approx_selection_fraction": 0.2,
+      "exact_residual_qcoords": 0.0,
+      "approx_residual_qcoords": 0.25237190142858296,
+      "approx_info_qcoords": 0.07939911713953994,
+      "approx_classes": 1.4,
+      "same_component_mass": 0.9074074074074074,
+      "cross_component_mass": 0.03055555555555555,
+      "kept_mass": 0.875925925925926,
+      "component_balance": 0.19478208169472858,
+      "interface_mi_norm": 0.31881910331704716,
+      "interface_copy_accuracy": 0.6666666666666666
+    }
+  ],
+  "mutation_curves": [
+    {
+      "rule_ensemble": "block",
+      "threshold_mode": "conditional",
+      "threshold": 0.2,
+      "exact_residual_by_mutation": {
+        "0.0": 0.6309297535714574,
+        "0.05": 0.37855785214287446,
+        "0.1": 0.12618595071429148
+      },
+      "approx_info_by_mutation": {
+        "0.0": 0.5793801642856949,
+        "0.05": 0.35218822776741154,
+        "0.1": 0.18855842696693634
+      },
+      "approx_residual_by_mutation": {
+        "0.0": 0.6309297535714574,
+        "0.05": 0.37855785214287446,
+        "0.1": 0.25237190142858296
+      },
+      "approx_selection_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.6,
+        "0.1": 0.4
+      },
+      "same_mass_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.9777777777777776,
+        "0.1": 0.9166666666666667
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 0.831752065714278,
+        "0.05": 0.7723600375553813,
+        "0.1": 0.7261917011107754
+      }
+    },
+    {
+      "rule_ensemble": "canalizing",
+      "threshold_mode": "conditional",
+      "threshold": 0.2,
+      "exact_residual_by_mutation": {
+        "0.0": 0.6309297535714574,
+        "0.05": 0.37855785214287446,
+        "0.1": 0.25237190142858296
+      },
+      "approx_info_by_mutation": {
+        "0.0": 0.5793801642856949,
+        "0.05": 0.3420361951785016,
+        "0.1": 0.19789973011844258
+      },
+      "approx_residual_by_mutation": {
+        "0.0": 0.6309297535714574,
+        "0.05": 0.37855785214287446,
+        "0.1": 0.25237190142858296
+      },
+      "approx_selection_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.6,
+        "0.1": 0.4
+      },
+      "same_mass_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.9888888888888889,
+        "0.1": 0.9666666666666666
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 0.831752065714278,
+        "0.05": 0.7716178888887165,
+        "0.1": 0.7165125278036945
+      }
+    },
+    {
+      "rule_ensemble": "copy",
+      "threshold_mode": "conditional",
+      "threshold": 0.2,
+      "exact_residual_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.7261859507142915,
+        "0.1": 0.0
+      },
+      "approx_info_by_mutation": {
+        "0.0": 0.9999999999999998,
+        "0.05": 0.715876032857139,
+        "0.1": 0.28049059641537977
+      },
+      "approx_residual_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.7261859507142915,
+        "0.1": 0.5047438028571659
+      },
+      "approx_selection_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.8,
+        "0.1": 0.8
+      },
+      "same_mass_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 1.0,
+        "0.1": 0.9
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.9299515148571371,
+        "0.1": 0.8067517730791905
+      }
+    },
+    {
+      "rule_ensemble": "permutive",
+      "threshold_mode": "conditional",
+      "threshold": 0.2,
+      "exact_residual_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.32618595071429146,
+        "0.1": 0.32618595071429146
+      },
+      "approx_info_by_mutation": {
+        "0.0": 0.9999999999999998,
+        "0.05": 0.5978835850359403,
+        "0.1": 0.2820236972613036
+      },
+      "approx_residual_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.8,
+        "0.1": 0.32618595071429146
+      },
+      "approx_selection_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.8,
+        "0.1": 0.4
+      },
+      "same_mass_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.9185185185185185,
+        "0.1": 0.9944444444444445
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 1.0,
+        "0.05": 0.9026523411428483,
+        "0.1": 0.864209073555385
+      }
+    },
+    {
+      "rule_ensemble": "random",
+      "threshold_mode": "conditional",
+      "threshold": 0.2,
+      "exact_residual_by_mutation": {
+        "0.0": 0.0,
+        "0.05": 0.0,
+        "0.1": 0.0
+      },
+      "approx_info_by_mutation": {
+        "0.0": 0.0,
+        "0.05": 0.0,
+        "0.1": 0.07939911713953994
+      },
+      "approx_residual_by_mutation": {
+        "0.0": 0.0,
+        "0.05": 0.0,
+        "0.1": 0.25237190142858296
+      },
+      "approx_selection_by_mutation": {
+        "0.0": 0.0,
+        "0.05": 0.0,
+        "0.1": 0.2
+      },
+      "same_mass_by_mutation": {
+        "0.0": 0.9675925925925926,
+        "0.05": 0.9305555555555556,
+        "0.1": 0.9074074074074074
+      },
+      "interface_mi_by_mutation": {
+        "0.0": 0.31487721287243575,
+        "0.05": 0.4461468001367881,
+        "0.1": 0.31881910331704716
+      }
+    }
+  ]
+}
