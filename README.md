@@ -6,10 +6,6 @@ the physics is the invariant structure that a finite interior part can resolve
 about the rest.* It is built to be run locally and to produce
 publication-grade, seed-reproducible results.
 
-The package deliberately does **not** assume the discarded `survival = 1/3 = 1/d`
-claim (that was numerology matching the wrong constant). It measures a family of
-candidate invariants and reports which, if any, survive scrutiny.
-
 ---
 
 ## 1. The object under study
