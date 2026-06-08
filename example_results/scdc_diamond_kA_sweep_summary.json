@@ -1,0 +1,102 @@
+{
+  "verdict": "SCDC COST SIGNAL: raw branch order is confluent, but sink consistency requires quotient collapse",
+  "cost_bound_violations": 0,
+  "mean_cost_qcoords": 2.9182907081915057,
+  "mean_cost_bits": 5.836581416383011,
+  "mean_collapsed_vertices": 3.65,
+  "mean_admissibility_merges": 0.6733333333333333,
+  "by_mode": {
+    "branch_order": {
+      "cost_qcoords": 0.0,
+      "cost_bits": 0.0,
+      "cost_A_qcoords": 0.0,
+      "cost_B_qcoords": 0.0,
+      "cost_C_qcoords": 0.0,
+      "cost_D_qcoords": 0.0,
+      "collapsed_vertices": 0.0,
+      "seed_merges_sink": 0.0,
+      "seed_merges_order": 0.0,
+      "seed_merges_schedule": 0.0
+    },
+    "sink_equal": {
+      "cost_qcoords": 2.495,
+      "cost_bits": 4.99,
+      "cost_A_qcoords": 2.495,
+      "cost_B_qcoords": 0.0,
+      "cost_C_qcoords": 0.0,
+      "cost_D_qcoords": 0.0,
+      "collapsed_vertices": 2.5,
+      "seed_merges_sink": 2.98,
+      "seed_merges_order": 0.0,
+      "seed_merges_schedule": 0.0
+    },
+    "strict_schedule": {
+      "cost_qcoords": 6.259872124574518,
+      "cost_bits": 12.519744249149037,
+      "cost_A_qcoords": 2.485,
+      "cost_B_qcoords": 0.8965864372800474,
+      "cost_C_qcoords": 1.4448044999134613,
+      "cost_D_qcoords": 1.4334811873810094,
+      "collapsed_vertices": 8.45,
+      "seed_merges_sink": 0.0,
+      "seed_merges_order": 0.0,
+      "seed_merges_schedule": 19.97
+    }
+  },
+  "scaling": [
+    {
+      "constraint_mode": "branch_order",
+      "kM": 2,
+      "kA": 2,
+      "w": 1,
+      "cost_by_kB": {
+        "2": 0.0
+      }
+    },
+    {
+      "constraint_mode": "branch_order",
+      "kM": 2,
+      "kA": 3,
+      "w": 1,
+      "cost_by_kB": {
+        "2": 0.0
+      }
+    },
+    {
+      "constraint_mode": "sink_equal",
+      "kM": 2,
+      "kA": 2,
+      "w": 1,
+      "cost_by_kB": {
+        "2": 2.0
+      }
+    },
+    {
+      "constraint_mode": "sink_equal",
+      "kM": 2,
+      "kA": 3,
+      "w": 1,
+      "cost_by_kB": {
+        "2": 2.99
+      }
+    },
+    {
+      "constraint_mode": "strict_schedule",
+      "kM": 2,
+      "kA": 2,
+      "w": 1,
+      "cost_by_kB": {
+        "2": 5.810721749581729
+      }
+    },
+    {
+      "constraint_mode": "strict_schedule",
+      "kM": 2,
+      "kA": 3,
+      "w": 1,
+      "cost_by_kB": {
+        "2": 6.709022499567307
+      }
+    }
+  ]
+}

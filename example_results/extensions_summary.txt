@@ -1,0 +1,16 @@
+=== GAUGE-DIMENSION (cycle-rank) TEST ===
+single-SCC deficit by extra at q=16: {0: 1.045, 1: 1.001, 2: 0.947, 3: 0.877}
+beta_1 by extra                    : {0: 1.0, 1: 2.0, 2: 3.0, 3: 4.0}
+VERDICT: OBSERVER-COUNT confirmed: deficit ~ 1 for any single SCC, independent of beta_1 (H_betti refuted)
+  (2, 2)     deficit=1.898  #observers=2  beta1=2
+  (2, 2, 2)  deficit=2.812  #observers=3  beta1=3
+  (2,)       deficit=0.949  #observers=1  beta1=1
+  (3, 2)     deficit=2.116  #observers=2  beta1=2
+  (3,)       deficit=1.002  #observers=1  beta1=1
+VERDICT: deficit = #observers in 5/5 configs (additivity of one phase per observer)
+
+=== AREA-LAW TEST (active resolver) ===
+[cycle] I(w=1) by k: {3: 3.01, 4: 3.89, 5: 4.95} | log|Rec| by k: {3: 3.01, 4: 3.89, 5: 4.95}
+[cycle] VERDICT: VOLUME-LAW / transparent (I tracks bulk; the boundary reveals the whole state given enough observation -- NO holographic hiding)
+[scc] I(w=1) by k: {3: 4.3, 4: 5.99, 5: 7.23} | log|Rec| by k: {3: 4.35, 4: 6.11, 5: 7.56}
+[scc] VERDICT: VOLUME-LAW / transparent (I tracks bulk; the boundary reveals the whole state given enough observation -- NO holographic hiding)

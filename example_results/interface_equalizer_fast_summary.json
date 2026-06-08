@@ -1,0 +1,86 @@
+{
+  "verdict": "NO NONTRIVIAL INTERFACE EQUALIZER in this regime",
+  "equalizer_bound_violations": 0,
+  "mean_eq_residual_qcoords": 0.0,
+  "mean_eq_cost_qcoords": 2.0,
+  "mean_eq_residual_per_width": 0.0,
+  "mean_eq_cost_per_width": 2.0,
+  "mean_product_cost_A_qcoords": NaN,
+  "mean_product_hidden_A_cost_qcoords": NaN,
+  "mean_overcollapse_avoided_qcoords": NaN,
+  "mean_hidden_collapse_avoided_qcoords": NaN,
+  "by_mode": {
+    "joint": {
+      "eq_residual_qcoords": 0.0,
+      "eq_cost_qcoords": 2.0,
+      "eq_residual_per_width": 0.0,
+      "eq_cost_per_width": 2.0,
+      "eq_shared_classes_mean": 1.0,
+      "eq_edge_density_mean": 0.700625,
+      "product_cost_A_qcoords": NaN,
+      "product_hidden_A_cost_qcoords": NaN,
+      "overcollapse_avoided_qcoords": NaN
+    },
+    "pairwise": {
+      "eq_residual_qcoords": 0.0,
+      "eq_cost_qcoords": 2.0,
+      "eq_residual_per_width": 0.0,
+      "eq_cost_per_width": 2.0,
+      "eq_shared_classes_mean": 1.0,
+      "eq_edge_density_mean": 0.700625,
+      "product_cost_A_qcoords": NaN,
+      "product_hidden_A_cost_qcoords": NaN,
+      "overcollapse_avoided_qcoords": NaN
+    }
+  },
+  "scaling": [
+    {
+      "eq_mode": "joint",
+      "kM": 2,
+      "kA": 2,
+      "w": 1,
+      "equalizer_cost_by_kB": {
+        "2": 2.0
+      },
+      "equalizer_residual_by_kB": {
+        "2": 0.0
+      }
+    },
+    {
+      "eq_mode": "joint",
+      "kM": 2,
+      "kA": 3,
+      "w": 1,
+      "equalizer_cost_by_kB": {
+        "2": 2.0
+      },
+      "equalizer_residual_by_kB": {
+        "2": 0.0
+      }
+    },
+    {
+      "eq_mode": "pairwise",
+      "kM": 2,
+      "kA": 2,
+      "w": 1,
+      "equalizer_cost_by_kB": {
+        "2": 2.0
+      },
+      "equalizer_residual_by_kB": {
+        "2": 0.0
+      }
+    },
+    {
+      "eq_mode": "pairwise",
+      "kM": 2,
+      "kA": 3,
+      "w": 1,
+      "equalizer_cost_by_kB": {
+        "2": 2.0
+      },
+      "equalizer_residual_by_kB": {
+        "2": 0.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "grid": {"ensemble": ["scc"], "k": [2, 3, 4, 5], "q": [4, 8, 16, 32],
+           "w": [1, 2], "density": [2]},
+  "n_instances": 300,
+  "passive_horizons": [1, 2, 3],
+  "do_active": true,
+  "do_partition": true,
+  "n_boot": 2000,
+  "structural": {"k": 5, "q": 4, "n": 200, "fusion_kP": 3, "fusion_q": 4,
+                 "fusion_r": 2, "fusion_events": 150}
+}
