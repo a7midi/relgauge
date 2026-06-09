@@ -167,7 +167,11 @@ def exact_common_factor(left: np.ndarray, right: np.ndarray, q: int, width: int)
     """Return exact equalizer labels for observed left/right word pairs.
 
     The exact common factor is the connected-component quotient of the observed
-    bipartite compatibility graph on left and right interface words.
+    bipartite compatibility graph on left and right interface words.  In
+    addition to labels for the supplied observations, this function returns
+    left/right label maps on the full side alphabet, with -1 for unseen words.
+    Those maps are needed for persistence tests: the next tick must be read in
+    the *same* selected alphabet S, rather than recomputing a new equalizer.
     """
     left = np.asarray(left, dtype=np.int64)
     right = np.asarray(right, dtype=np.int64)
@@ -185,13 +189,19 @@ def exact_common_factor(left: np.ndarray, right: np.ndarray, q: int, width: int)
     roots = sorted({uf.find(x) for x in touched_left} | {uf.find(n_side + x) for x in touched_right})
     root_to_label = {root: i for i, root in enumerate(roots)}
     k = len(roots)
+    left_map = np.full(n_side, -1, dtype=np.int64)
+    right_map = np.full(n_side, -1, dtype=np.int64)
+    for x in touched_left:
+        left_map[int(x)] = int(root_to_label[uf.find(int(x))])
+    for x in touched_right:
+        right_map[int(x)] = int(root_to_label[uf.find(n_side + int(x))])
     if k == 0:
         zl = np.full(len(left), -1, dtype=np.int64)
         zr = np.full(len(right), -1, dtype=np.int64)
         residual = math.nan
     else:
-        zl = np.array([root_to_label[uf.find(int(x))] for x in left], dtype=np.int64)
-        zr = np.array([root_to_label[uf.find(n_side + int(x))] for x in right], dtype=np.int64)
+        zl = left_map[left]
+        zr = right_map[right]
         residual = math.log(k, q)
     left_sizes = []
     right_sizes = []
@@ -201,6 +211,8 @@ def exact_common_factor(left: np.ndarray, right: np.ndarray, q: int, width: int)
     return dict(
         z_left=zl,
         z_right=zr,
+        left_label_map=left_map,
+        right_label_map=right_map,
         shared_classes=int(k),
         residual_qcoords=float(residual),
         residual_bits=(float(math.log2(k)) if k > 0 else math.nan),
@@ -210,6 +222,58 @@ def exact_common_factor(left: np.ndarray, right: np.ndarray, q: int, width: int)
         right_class_sizes=tuple(int(x) for x in right_sizes),
     )
 
+
+def labels_in_existing_common_factor(left: np.ndarray, right: np.ndarray, cf: dict) -> tuple[np.ndarray, np.ndarray]:
+    """Label panel pairs in an already selected alphabet S.
+
+    Returns (labels, valid).  A pair is valid only when both side-words were
+    present in the original equalizer and they map to the same S-label.
+    This avoids the previous audit bug: recomputing the equalizer after adding
+    next-tick pairs can merge labels and artificially produce NaN persistence.
+    """
+    left = np.asarray(left, dtype=np.int64)
+    right = np.asarray(right, dtype=np.int64)
+    lmap = np.asarray(cf.get("left_label_map"), dtype=np.int64)
+    rmap = np.asarray(cf.get("right_label_map"), dtype=np.int64)
+    zl = np.full(len(left), -1, dtype=np.int64)
+    zr = np.full(len(right), -2, dtype=np.int64)
+    ok_l = (left >= 0) & (left < len(lmap))
+    ok_r = (right >= 0) & (right < len(rmap))
+    zl[ok_l] = lmap[left[ok_l]]
+    zr[ok_r] = rmap[right[ok_r]]
+    valid = (zl >= 0) & (zr >= 0) & (zl == zr)
+    out = np.full(len(left), -1, dtype=np.int64)
+    out[valid] = zl[valid]
+    return out, valid
+
+
+
+def _labels_from_map(words: np.ndarray, label_map: np.ndarray) -> np.ndarray:
+    """Apply a fixed interface-word -> S-label map; unknown words map to -1."""
+    words = np.asarray(words, dtype=np.int64)
+    label_map = np.asarray(label_map, dtype=np.int64)
+    out = np.full(len(words), -1, dtype=np.int64)
+    ok = (words >= 0) & (words < len(label_map))
+    out[ok] = label_map[words[ok]]
+    return out
+
+
+def _mutual_info_valid(x: np.ndarray, y: np.ndarray) -> float:
+    """Mutual information after dropping pairs with unknown/negative labels."""
+    x = np.asarray(x, dtype=np.int64)
+    y = np.asarray(y, dtype=np.int64)
+    ok = (x >= 0) & (y >= 0)
+    if not np.any(ok):
+        return math.nan
+    return _mutual_info_discrete(x[ok], y[ok])
+
+
+def _entropy_valid(x: np.ndarray) -> float:
+    x = np.asarray(x, dtype=np.int64)
+    ok = x >= 0
+    if not np.any(ok):
+        return math.nan
+    return _entropy_from_counts(np.bincount(x[ok]))
 
 def _subsample_indices(n: int, cap: int, rng: np.random.Generator) -> np.ndarray:
     if cap <= 0 or n <= cap:
@@ -261,48 +325,53 @@ def audit_candidate(
     mi_source_right = _mutual_info_discrete(src, right)
     max_bits = ds.w * math.log2(ds.q)
 
-    # One-step persistence of the selected label.  The same exact component map
-    # is reused on the next tick.  This tests whether the discovered label is a
-    # transient boundary partition or a label that tends to persist dynamically.
+    # One-step persistence of the selected label.  The same exact S-label maps
+    # selected at tick t are reused at tick t+1.  We deliberately do NOT
+    # recompute the equalizer with next-tick pairs; doing so can merge old
+    # components and falsely report NaN/zero persistence.
     persistence_mi = math.nan
     persistence_norm = math.nan
-    if future_sample_cap != 0 and len(finals) > 0 and cf["shared_classes"] > 0:
+    persistence_valid_fraction = math.nan
+    persistence_conservation_fraction = math.nan
+    persistence_match_given_valid = math.nan
+    persistence_valid_mi = math.nan
+    persistence_valid_norm = math.nan
+    if future_sample_cap != 0 and len(finals) > 0 and cf["shared_classes"] > 1:
         rng = np.random.default_rng((int(base_seed) * 1009 + int(candidate_index) * 9173 + 12345) % 2**32)
-        idx = _subsample_indices(len(finals), int(future_sample_cap), rng)
-        finals_sample = finals[idx]
-        z_now = z[idx]
-        next_states = maps[:, np.unique(finals_sample)].reshape(-1)
-        # Need align z_now with unique finals; use first label for each unique final state.
-        unique_finals, inv = np.unique(finals_sample, return_inverse=True)
-        z_by_unique = np.zeros(len(unique_finals), dtype=np.int64)
-        for u in range(len(unique_finals)):
-            z_by_unique[u] = int(z_now[np.flatnonzero(inv == u)[0]])
-        z_now_rep = np.repeat(z_by_unique, maps.shape[0])
-        l2, r2 = final_panel_words(ds, next_states)
-        # Map next labels through the same component structure by recomputing
-        # components on the original relation plus next observed words.  For a
-        # strict persistence test, use original component map if possible.  A
-        # new exact_common_factor on original+next would artificially help, so
-        # here we use the original component labels by rebuilding its graph.
-        cf2 = exact_common_factor(np.concatenate([left, l2]), np.concatenate([right, r2]), ds.q, ds.w)
-        z_next = cf2["z_left"][len(left):]
-        # z_now_rep may use old label numbering.  The concatenated component map
-        # can merge old labels; remap z_now through the concatenated relation by
-        # labeling the original left words again and then selecting the sampled
-        # originals.
-        z_old_in_cf2 = cf2["z_left"][: len(left)]
-        z_now_rep2 = z_old_in_cf2[idx]
-        # Expand sampled first-tick labels to each second schedule.
-        # Since next_states is flattened maps[:, unique_finals], use z for each
-        # unique final repeated for all schedules in row-major blocks.
-        label_by_final = {}
-        for pos, f in enumerate(finals_sample):
-            label_by_final[int(f)] = int(z_now_rep2[pos])
-        z_unique = np.array([label_by_final[int(f)] for f in unique_finals], dtype=np.int64)
-        z_now_rep2 = np.tile(z_unique, maps.shape[0])
-        persistence_mi = _mutual_info_discrete(z_now_rep2, z_next)
-        hz_now = _entropy_from_counts(np.bincount(z_now_rep2[z_now_rep2 >= 0]))
-        persistence_norm = float(persistence_mi / hz_now) if hz_now > 1e-12 else math.nan
+        eligible = np.flatnonzero(z >= 0)
+        if len(eligible) > 0:
+            idx0 = eligible[_subsample_indices(len(eligible), int(future_sample_cap), rng)]
+            finals_sample = finals[idx0]
+            z_now_sample = z[idx0]
+            # Step each distinct first-tick final state forward by all admissible
+            # second-tick schedules, then read the second-tick panels in the
+            # original selected alphabet S.
+            unique_finals, inv = np.unique(finals_sample, return_inverse=True)
+            z_by_unique = np.zeros(len(unique_finals), dtype=np.int64)
+            for u in range(len(unique_finals)):
+                z_by_unique[u] = int(z_now_sample[np.flatnonzero(inv == u)[0]])
+            next_states = maps[:, unique_finals].reshape(-1)
+            z_now_rep = np.tile(z_by_unique, maps.shape[0])
+            l2, r2 = final_panel_words(ds, next_states)
+            z_next, valid_next = labels_in_existing_common_factor(l2, r2, cf)
+
+            # Erasure-inclusive retention: invalid next labels are encoded as a
+            # special erasure value.  This is conservative for conservation: an
+            # erased label does not count as a conserved match, but it may still
+            # carry information about which labels fail to persist.
+            erasure_label = int(cf["shared_classes"])
+            z_next_erasure = z_next.copy()
+            z_next_erasure[~valid_next] = erasure_label
+            persistence_mi = _mutual_info_discrete(z_now_rep, z_next_erasure)
+            hz_now = _entropy_from_counts(np.bincount(z_now_rep[z_now_rep >= 0], minlength=int(cf["shared_classes"])))
+            persistence_norm = float(persistence_mi / hz_now) if hz_now > 1e-12 else math.nan
+            persistence_valid_fraction = float(np.mean(valid_next)) if len(valid_next) else math.nan
+            persistence_conservation_fraction = float(np.mean(valid_next & (z_next == z_now_rep))) if len(valid_next) else math.nan
+            if np.any(valid_next):
+                persistence_match_given_valid = float(np.mean(z_next[valid_next] == z_now_rep[valid_next]))
+                persistence_valid_mi = _mutual_info_discrete(z_now_rep[valid_next], z_next[valid_next])
+                hz_valid = _entropy_from_counts(np.bincount(z_now_rep[valid_next], minlength=int(cf["shared_classes"])))
+                persistence_valid_norm = float(persistence_valid_mi / hz_valid) if hz_valid > 1e-12 else math.nan
 
     # Mutation robustness: start from this exact winner and mutate only by a
     # declared blind mutation rate.  The audit uses exact residual, not the
@@ -375,6 +444,11 @@ def audit_candidate(
         source_to_right_mi_bits=float(mi_source_right),
         one_step_label_persistence_mi_bits=float(persistence_mi) if not math.isnan(persistence_mi) else math.nan,
         one_step_label_persistence_norm=float(persistence_norm) if not math.isnan(persistence_norm) else math.nan,
+        one_step_label_valid_fraction=float(persistence_valid_fraction) if not math.isnan(persistence_valid_fraction) else math.nan,
+        one_step_label_conservation_fraction=float(persistence_conservation_fraction) if not math.isnan(persistence_conservation_fraction) else math.nan,
+        one_step_label_match_given_valid=float(persistence_match_given_valid) if not math.isnan(persistence_match_given_valid) else math.nan,
+        one_step_label_valid_mi_bits=float(persistence_valid_mi) if not math.isnan(persistence_valid_mi) else math.nan,
+        one_step_label_valid_norm=float(persistence_valid_norm) if not math.isnan(persistence_valid_norm) else math.nan,
         live_common_factor=bool(live),
         live_threshold=float(live_threshold),
         mutation_summary=json.dumps(mut_rows),
@@ -450,11 +524,16 @@ def analyze_common_factor_audit(df: pd.DataFrame) -> dict:
     mean_exact = float(df["exact_residual_qcoords"].mean())
     mean_source = float(df["source_to_label_mi_over_label_entropy"].replace([np.inf, -np.inf], np.nan).mean())
     mean_persist = float(df["one_step_label_persistence_norm"].replace([np.inf, -np.inf], np.nan).mean()) if "one_step_label_persistence_norm" in df else math.nan
+    mean_conserve = float(df["one_step_label_conservation_fraction"].replace([np.inf, -np.inf], np.nan).mean()) if "one_step_label_conservation_fraction" in df else math.nan
+    mean_valid = float(df["one_step_label_valid_fraction"].replace([np.inf, -np.inf], np.nan).mean()) if "one_step_label_valid_fraction" in df else math.nan
+    conserved_frac = float(((df.get("one_step_label_conservation_fraction", pd.Series(dtype=float)).replace([np.inf, -np.inf], np.nan)) >= 0.75).mean()) if "one_step_label_conservation_fraction" in df else math.nan
     mean_mut = float(df["mutation_survival_at_max_rate"].replace([np.inf, -np.inf], np.nan).mean()) if "mutation_survival_at_max_rate" in df else math.nan
     full_frac = float((df["exact_residual_qcoords"] >= df["w"].astype(float) - 1e-9).mean())
 
-    if live_frac >= 0.75 and mean_exact > 0.5:
-        verdict = "LIVE COMMON-FACTOR SIGNAL: exact winner labels carry source-dependent interface information"
+    if live_frac >= 0.75 and mean_exact > 0.5 and (not math.isnan(mean_conserve)) and mean_conserve >= 0.75:
+        verdict = "PERSISTENT LIVE COMMON-FACTOR SIGNAL: selected labels are source-live and dynamically conserved over one tick"
+    elif live_frac >= 0.75 and mean_exact > 0.5:
+        verdict = "LIVE COMMON-FACTOR SIGNAL: exact winner labels are source-dependent, but conservation/persistence is weak or unproven"
     elif mean_exact > 0.5 and live_frac < 0.25:
         verdict = "FORMAL EQUALIZER WARNING: exact shared alphabets exist but are weakly source-live"
     elif mean_exact > 0:
@@ -470,12 +549,16 @@ def analyze_common_factor_audit(df: pd.DataFrame) -> dict:
         live_common_factor_fraction=float(live_frac),
         mean_source_to_label_mi_over_label_entropy=float(mean_source) if not math.isnan(mean_source) else None,
         mean_one_step_label_persistence_norm=float(mean_persist) if not math.isnan(mean_persist) else None,
+        mean_one_step_label_valid_fraction=float(mean_valid) if not math.isnan(mean_valid) else None,
+        mean_one_step_label_conservation_fraction=float(mean_conserve) if not math.isnan(mean_conserve) else None,
+        conserved_common_factor_fraction=float(conserved_frac) if not math.isnan(conserved_frac) else None,
         mean_mutation_survival_at_max_rate=float(mean_mut) if not math.isnan(mean_mut) else None,
         top_winners=df.sort_values(["live_common_factor", "exact_residual_qcoords", "source_to_label_mi_over_label_entropy"], ascending=False)
         .head(10)[[
             "candidate_index", "exact_shared_classes", "exact_residual_qcoords",
             "live_common_factor", "source_to_label_mi_over_label_entropy",
             "label_balance", "one_step_label_persistence_norm",
+            "one_step_label_valid_fraction", "one_step_label_conservation_fraction",
             "mutation_survival_at_max_rate",
         ]].to_dict(orient="records"),
     )
