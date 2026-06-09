@@ -1,0 +1,69 @@
+{
+  "verdict": "SOURCE-DEAD BASIN LABEL: stable S is not explained by B's initial boundary",
+  "winner_index": 6,
+  "schedule_index": 0,
+  "schedule_branch_order": "CD",
+  "schedule_pair_id": 0,
+  "q": 4,
+  "w": 1,
+  "k_total": 8,
+  "n_initial_states": 65536,
+  "n_selection_states": 4096,
+  "n_attractors_total": 2,
+  "n_fixed_points_total": 2,
+  "fixed_point_hit_fraction": 1.0,
+  "valid_stable_s_fraction": 1.0,
+  "valid_fixed_stable_s_fraction": 1.0,
+  "exact_shared_classes": 4,
+  "exact_residual_qcoords": 1.0,
+  "used_stable_s_classes": 2,
+  "stable_s_class_counts": [
+    0,
+    28672,
+    36864,
+    0
+  ],
+  "stable_s_entropy_bits": 0.9886994082884974,
+  "stable_s_entropy_norm": 0.4943497041442487,
+  "contingency_b_initial_boundary_by_stable_s": [
+    [
+      0,
+      7168,
+      9216,
+      0
+    ],
+    [
+      0,
+      7168,
+      9216,
+      0
+    ],
+    [
+      0,
+      7168,
+      9216,
+      0
+    ],
+    [
+      0,
+      7168,
+      9216,
+      0
+    ]
+  ],
+  "b_initial_boundary_entropy_bits": 2.0,
+  "mi_b_initial_boundary_to_stable_s_bits": 0.0,
+  "mi_b_initial_boundary_to_stable_s_over_Hs": 0.0,
+  "mi_b_initial_boundary_to_stable_s_over_Hsource": 0.0,
+  "b_post_update_boundary_entropy_bits": 0.8112781244591328,
+  "mi_b_post_update_boundary_to_stable_s_bits": 0.0358798771737141,
+  "mi_b_post_update_boundary_to_stable_s_over_Hs": 0.03628997536857485,
+  "mi_b_post_update_boundary_to_stable_s_over_Hsource": 0.04422635849775278,
+  "saved_run": 4,
+  "saved_generation": 50,
+  "saved_candidate": 1201,
+  "saved_blind_fitness": 1.0000010000009907,
+  "saved_exact_residual_qcoords": 1.0,
+  "saved_target_mode": "interface",
+  "saved_fitness_mode": "two_stage"
+}
