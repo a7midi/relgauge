@@ -1,0 +1,60 @@
+{
+  "verdict": "TRANSPORT ALGEBRA FOUND: group order_6 on |S|=3",
+  "n_rows": 50,
+  "n_selected": 50,
+  "permutation_type_counts": {
+    "nonbijective": 1,
+    "cycle_2_1": 39,
+    "identity": 10
+  },
+  "group_summaries": {
+    "3": {
+      "group_name": "order_6",
+      "group_order": 6,
+      "group_cyclic": false,
+      "group_abelian": false,
+      "group_transitive": true,
+      "group_all_even": false,
+      "element_order_hist": {
+        "1": 1,
+        "2": 3,
+        "3": 2
+      },
+      "cycle_type_hist": {
+        "(1, 1, 1)": 1,
+        "(2, 1)": 3,
+        "(3,)": 2
+      },
+      "n_generators": 49,
+      "unique_generators": 4,
+      "generators": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  "filters": {
+    "min_transport": 0.8,
+    "min_source": 0.8,
+    "min_accuracy": 0.95,
+    "min_residual": 1e-09
+  }
+}
