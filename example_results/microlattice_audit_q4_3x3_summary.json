@@ -1,0 +1,44 @@
+{
+  "verdict": "COUPLED Z2 MICRO-LATTICE AUDIT: selected winners contain full valid plaquette flux maps with nontrivial sectors",
+  "winner_path": "example_results/blind_microlattice_winners_q4_3x3.pkl",
+  "n_winners": 50,
+  "mean_z2_fraction": 1.0,
+  "full_valid_fraction": 1.0,
+  "mean_nontrivial_fraction": 0.5577777777777778,
+  "nontrivial_any_fraction": 1.0,
+  "mean_flux": -0.11555555555555555,
+  "mean_domain_wall_fraction": 0.5816666666666667,
+  "mean_neg_domain_count": 1.02,
+  "mean_neg_domain_max": 4.98,
+  "mean_interior_star_negative_fraction": 0.745,
+  "wilson_mean_by_area": {
+    "1": -0.11555555555555555,
+    "2": -0.16333333333333333,
+    "3": -0.32,
+    "4": -0.49,
+    "6": 0.47,
+    "9": -0.96
+  },
+  "wilson_abs_mean_by_area": {
+    "1": 0.11555555555555555,
+    "2": 0.16333333333333333,
+    "3": 0.6533333333333333,
+    "4": 0.49,
+    "6": 0.49,
+    "9": 1.0
+  },
+  "flux_corr_by_distance": {
+    "1": -0.16333333333333333,
+    "2": -0.13714285714285712,
+    "3": -0.01,
+    "4": 0.02
+  },
+  "flux_connected_corr_by_distance": {
+    "1": -0.1776543209876543,
+    "2": -0.15146384479717812,
+    "3": -0.02432098765432099,
+    "4": 0.005679012345679012
+  },
+  "best_winner_index": 0,
+  "best_flux_map": "+-+/---/+--"
+}

@@ -1,0 +1,48 @@
+{
+  "verdict": "FLAT Z2 LATTICE: Wilson loops are nearly identity",
+  "n_rows": 9,
+  "mode": "flat",
+  "p": 0.0,
+  "mean_flux": 1.0,
+  "expected_area_alpha": 0.0,
+  "expected_perimeter_beta": 0.0,
+  "mean_abs_W": 1.0,
+  "area_fit": {
+    "slope": 0.0,
+    "intercept": 0.0,
+    "rss": 0.0,
+    "aic": -161.78612669557128,
+    "r2": 1.0,
+    "n": 6
+  },
+  "perimeter_fit": {
+    "slope": 0.0,
+    "intercept": 0.0,
+    "rss": 0.0,
+    "aic": -161.78612669557128,
+    "r2": 1.0,
+    "n": 6
+  },
+  "area_alpha": -0.0,
+  "perimeter_beta": -0.0,
+  "aic_gap_perimeter_minus_area": 0.0,
+  "area_model_rmse": 0.0,
+  "perimeter_model_rmse": 0.0,
+  "flux_info": {},
+  "by_area": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0,
+    "6": 1.0,
+    "9": 1.0
+  },
+  "by_area_abs": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0,
+    "6": 1.0,
+    "9": 1.0
+  }
+}

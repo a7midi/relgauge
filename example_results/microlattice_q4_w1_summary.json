@@ -1,0 +1,78 @@
+{
+  "verdict": "COUPLED Z2 LINK-LATTICE: microscopic shared edges produce Wilson loops not reducible to independent plaquette sampling",
+  "n_rows": 192,
+  "by_ensemble": [
+    {
+      "ensemble": "c2link",
+      "p_flip": 0.1,
+      "mutation_rate": 0.0,
+      "mean_valid_plaquette_fraction": 1.0,
+      "mean_z2_plaquette_fraction": 1.0,
+      "mean_nontrivial_plaquette_fraction": 0.4055208333333333,
+      "area_alpha": 0.37057440675757297,
+      "perimeter_beta": 0.2816011641175858,
+      "area_rmse": 1.4746329195765298,
+      "perimeter_rmse": 1.084519141611483
+    },
+    {
+      "ensemble": "c2link",
+      "p_flip": 0.3,
+      "mutation_rate": 0.0,
+      "mean_valid_plaquette_fraction": 1.0,
+      "mean_z2_plaquette_fraction": 1.0,
+      "mean_nontrivial_plaquette_fraction": 0.49937499999999996,
+      "area_alpha": 0.38628901385564623,
+      "perimeter_beta": 0.33082391712220116,
+      "area_rmse": 2.6096770726017464,
+      "perimeter_rmse": 1.7790737739180265
+    },
+    {
+      "ensemble": "c2link",
+      "p_flip": 0.5,
+      "mutation_rate": 0.0,
+      "mean_valid_plaquette_fraction": 1.0,
+      "mean_z2_plaquette_fraction": 1.0,
+      "mean_nontrivial_plaquette_fraction": 0.49024305555555553,
+      "area_alpha": 0.4462927179431824,
+      "perimeter_beta": 0.3690816484857971,
+      "area_rmse": 2.5784943093896393,
+      "perimeter_rmse": 1.6935202652103318
+    },
+    {
+      "ensemble": "copy",
+      "p_flip": 0.0,
+      "mutation_rate": 0.0,
+      "mean_valid_plaquette_fraction": 1.0,
+      "mean_z2_plaquette_fraction": 0.0,
+      "mean_nontrivial_plaquette_fraction": 0.0,
+      "area_alpha": NaN,
+      "perimeter_beta": NaN,
+      "area_rmse": NaN,
+      "perimeter_rmse": NaN
+    },
+    {
+      "ensemble": "permutive",
+      "p_flip": 0.0,
+      "mutation_rate": 0.0,
+      "mean_valid_plaquette_fraction": 1.0,
+      "mean_z2_plaquette_fraction": 0.0,
+      "mean_nontrivial_plaquette_fraction": 0.9600347222222222,
+      "area_alpha": NaN,
+      "perimeter_beta": NaN,
+      "area_rmse": NaN,
+      "perimeter_rmse": NaN
+    },
+    {
+      "ensemble": "random",
+      "p_flip": 0.0,
+      "mutation_rate": 0.0,
+      "mean_valid_plaquette_fraction": 0.0009375,
+      "mean_z2_plaquette_fraction": 0.0009375,
+      "mean_nontrivial_plaquette_fraction": 0.01,
+      "area_alpha": NaN,
+      "perimeter_beta": NaN,
+      "area_rmse": NaN,
+      "perimeter_rmse": NaN
+    }
+  ]
+}
