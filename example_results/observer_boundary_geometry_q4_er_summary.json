@@ -1,0 +1,21 @@
+{
+  "verdict": "OBSERVER-RELATIVE CYCLE GEOMETRY SIGNAL: live cycles appear in observer-resolvable cut graph",
+  "q": 4,
+  "graph_mode": "er",
+  "n_graphs": 100,
+  "n_vertices": 18,
+  "mean_scc": 7.18,
+  "mean_feedback_scc": 1.21,
+  "mean_observers_with_boundary": 6.93,
+  "mean_live_observers": 4.87,
+  "mean_observer_edges": 8.78,
+  "mean_live_observer_edges": 7.15,
+  "mean_observer_beta1": 2.84,
+  "total_observer_cycles": 1070,
+  "total_live_observer_cycles": 354,
+  "graph_fraction_with_cycles": 0.7,
+  "graph_fraction_with_live_cycles": 0.59,
+  "mean_boundary_mi_bits": 1.0573568376514628,
+  "mean_edge_mi_bits": 0.7388075340188055,
+  "full_boundary_violations": 0
+}

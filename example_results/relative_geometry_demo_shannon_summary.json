@@ -1,0 +1,60 @@
+{
+  "verdict": "OBSERVER-RELATIVE C2 BOUNDARY SIGNAL",
+  "n_boundary_rows": 31,
+  "n_proper_observer_rows": 28,
+  "n_gluing_rows": 23,
+  "full_system_boundary_empty": true,
+  "proper_nontrivial_boundary_fraction": 0.6428571428571429,
+  "proper_binary_c2_like_fraction": 0.6428571428571429,
+  "mean_boundary_quotient_size": 1.6428571428571428,
+  "mean_boundary_quotient_entropy_bits": 0.6428571428571429,
+  "mean_boundary_mi_bits": 0.6890405601054574,
+  "mean_live_site_fraction": 0.6428571428571429,
+  "raw_cancellation_fraction": 1.0,
+  "mean_gluing_residual_entropy_bits": 0.0,
+  "defect_candidate_fraction": 0.0,
+  "by_ensemble": [
+    {
+      "rule_ensemble": "observer_copy_pair",
+      "n_observers": 18,
+      "nontrivial_boundary_fraction": 1.0,
+      "binary_c2_like_fraction": 1.0,
+      "mean_boundary_quotient_size": 2.0,
+      "mean_boundary_quotient_entropy_bits": 1.0,
+      "mean_boundary_mi_bits": 1.0,
+      "mean_live_site_fraction": 1.0,
+      "mean_effective_cycle_rank": 0.05555555555555555
+    },
+    {
+      "rule_ensemble": "random_scc",
+      "n_observers": 10,
+      "nontrivial_boundary_fraction": 0.0,
+      "binary_c2_like_fraction": 0.0,
+      "mean_boundary_quotient_size": 1.0,
+      "mean_boundary_quotient_entropy_bits": 0.0,
+      "mean_boundary_mi_bits": 0.12931356829528068,
+      "mean_live_site_fraction": 0.0,
+      "mean_effective_cycle_rank": 0.0
+    }
+  ],
+  "gluing_by_ensemble": [
+    {
+      "rule_ensemble": "observer_copy_pair",
+      "n_pairs": 20,
+      "raw_cancellation_fraction": 1.0,
+      "mean_gluing_accuracy": 1.0,
+      "mean_residual_entropy_bits": 0.0,
+      "defect_candidate_fraction": 0.0,
+      "mean_seam_edge_count": 1.4
+    },
+    {
+      "rule_ensemble": "random_scc",
+      "n_pairs": 3,
+      "raw_cancellation_fraction": 1.0,
+      "mean_gluing_accuracy": 1.0,
+      "mean_residual_entropy_bits": 0.0,
+      "defect_candidate_fraction": 0.0,
+      "mean_seam_edge_count": 4.666666666666667
+    }
+  ]
+}

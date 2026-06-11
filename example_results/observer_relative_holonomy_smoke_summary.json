@@ -1,0 +1,23 @@
+{
+  "verdict": "OBSERVER-RELATIVE DIAMOND GEOMETRY ONLY: live cycles orient as two-path diamonds but transported quotient holonomy was not found",
+  "q": 4,
+  "graph_mode": "componented",
+  "n_graphs": 8,
+  "n_vertices": 12,
+  "total_tested_cycles": 24,
+  "total_usable_diamonds": 19,
+  "total_valid_holonomy": 0,
+  "total_nontrivial_holonomy": 0,
+  "live_edge_quotient_fraction": 0.025,
+  "graph_fraction_with_valid_holonomy": 0.0,
+  "graph_fraction_with_nontrivial_holonomy": 0.0,
+  "usable_diamond_fraction": 0.7916666666666666,
+  "valid_holonomy_fraction": 0.0,
+  "nontrivial_holonomy_fraction": 0.0,
+  "mean_edge_shared_classes": 1.05,
+  "mean_edge_residual_bits": 0.0396240625180289,
+  "mean_edge_transport": 0.025,
+  "group_counts": {},
+  "holonomy_type_counts": {},
+  "full_boundary_violations": 0
+}

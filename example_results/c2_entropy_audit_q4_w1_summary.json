@@ -1,0 +1,70 @@
+{
+  "verdict": "C2 ENTROPY SIGNAL: conditioned live transported squares are overwhelmingly binary",
+  "n_rows": 7050,
+  "overall": {
+    "n": 7050,
+    "valid_count": 4772,
+    "valid_fraction": 0.6768794326241134,
+    "binary_given_valid": 1.0,
+    "ge3_given_valid": 0.0,
+    "full_given_valid": 0.0,
+    "min_classes_counts": {
+      "2": 4772
+    },
+    "group_counts": {
+      "C2": 4772
+    },
+    "delta_type_counts": {
+      "cycle_2": 4693,
+      "identity": 79
+    }
+  },
+  "by_source": {
+    "neighborhood": {
+      "n": 6000,
+      "valid_count": 4722,
+      "valid_fraction": 0.787,
+      "binary_given_valid": 1.0,
+      "ge3_given_valid": 0.0,
+      "full_given_valid": 0.0,
+      "min_classes_counts": {
+        "2": 4722
+      },
+      "group_counts": {
+        "C2": 4722
+      },
+      "delta_type_counts": {
+        "cycle_2": 4643,
+        "identity": 79
+      }
+    },
+    "random": {
+      "n": 1000,
+      "valid_count": 0,
+      "valid_fraction": 0.0,
+      "binary_given_valid": NaN,
+      "ge3_given_valid": NaN,
+      "full_given_valid": NaN,
+      "min_classes_counts": {},
+      "group_counts": {},
+      "delta_type_counts": {}
+    },
+    "winner": {
+      "n": 50,
+      "valid_count": 50,
+      "valid_fraction": 1.0,
+      "binary_given_valid": 1.0,
+      "ge3_given_valid": 0.0,
+      "full_given_valid": 0.0,
+      "min_classes_counts": {
+        "2": 50
+      },
+      "group_counts": {
+        "C2": 50
+      },
+      "delta_type_counts": {
+        "cycle_2": 50
+      }
+    }
+  }
+}

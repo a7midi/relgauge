@@ -1,0 +1,24 @@
+{
+  "verdict": "NO ROBUST VACUUM FUSION: selected vacua do not coherently fuse in this audit",
+  "n_rows": 80,
+  "clean_fusion_fraction": 0.0,
+  "localized_seam_defect_fraction": 0.0,
+  "mean_z2_fraction": 0.5359375,
+  "mean_left_z2_fraction": 1.0,
+  "mean_right_z2_fraction": 0.071875,
+  "mean_interior_z2_fraction": 0.525,
+  "mean_seam_z2_fraction": 0.56875,
+  "mean_seam_residue": 0.008333333333333335,
+  "mean_seam_pair_z2_fraction": 0.1375,
+  "mean_seam_flux_mismatch_fraction": 0.5909090909090909,
+  "mean_wilson_crossing_abs": 0.75,
+  "mean_wilson_noncrossing_abs": 0.07535473414057627,
+  "group_name_counts": {
+    "C2": 1334,
+    "trivial": 38
+  },
+  "delta_type_counts": {
+    "identity": 608,
+    "cycle_2": 764
+  }
+}

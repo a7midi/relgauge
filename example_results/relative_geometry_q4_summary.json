@@ -1,0 +1,60 @@
+{
+  "verdict": "OBSERVER-RELATIVE C2 BOUNDARY SIGNAL",
+  "n_boundary_rows": 154,
+  "n_proper_observer_rows": 104,
+  "n_gluing_rows": 99,
+  "full_system_boundary_empty": true,
+  "proper_nontrivial_boundary_fraction": 0.7788461538461539,
+  "proper_binary_c2_like_fraction": 0.7788461538461539,
+  "mean_boundary_quotient_size": 1.7788461538461537,
+  "mean_boundary_quotient_entropy_bits": 0.7728336597640552,
+  "mean_boundary_mi_bits": 0.9122102360732559,
+  "mean_live_site_fraction": 0.7724358974358976,
+  "raw_cancellation_fraction": 1.0,
+  "mean_gluing_residual_entropy_bits": 0.0,
+  "defect_candidate_fraction": 0.0,
+  "by_ensemble": [
+    {
+      "rule_ensemble": "observer_parity_pair",
+      "n_observers": 80,
+      "nontrivial_boundary_fraction": 1.0,
+      "binary_c2_like_fraction": 1.0,
+      "mean_boundary_quotient_size": 2.0,
+      "mean_boundary_quotient_entropy_bits": 1.0,
+      "mean_boundary_mi_bits": 1.0,
+      "mean_live_site_fraction": 1.0,
+      "mean_effective_cycle_rank": 0.125
+    },
+    {
+      "rule_ensemble": "random_scc",
+      "n_observers": 24,
+      "nontrivial_boundary_fraction": 0.041666666666666664,
+      "binary_c2_like_fraction": 0.041666666666666664,
+      "mean_boundary_quotient_size": 1.0416666666666667,
+      "mean_boundary_quotient_entropy_bits": 0.015612525644239261,
+      "mean_boundary_mi_bits": 0.6195776896507761,
+      "mean_live_site_fraction": 0.013888888888888888,
+      "mean_effective_cycle_rank": 0.0
+    }
+  ],
+  "gluing_by_ensemble": [
+    {
+      "rule_ensemble": "observer_parity_pair",
+      "n_pairs": 90,
+      "raw_cancellation_fraction": 1.0,
+      "mean_gluing_accuracy": 1.0,
+      "mean_residual_entropy_bits": 0.0,
+      "defect_candidate_fraction": 0.0,
+      "mean_seam_edge_count": 1.0
+    },
+    {
+      "rule_ensemble": "random_scc",
+      "n_pairs": 9,
+      "raw_cancellation_fraction": 1.0,
+      "mean_gluing_accuracy": 1.0,
+      "mean_residual_entropy_bits": 0.0,
+      "defect_candidate_fraction": 0.0,
+      "mean_seam_edge_count": 2.4444444444444446
+    }
+  ]
+}

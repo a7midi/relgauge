@@ -1,0 +1,55 @@
+{
+  "verdict": "CLOSED SCC C2 MEDIUM SIGNAL: closed recurrent lattices support C2 quotients with nontrivial recurrent flux",
+  "n_rows": 150,
+  "closed_c2_fraction": 0.6666666666666666,
+  "closed_medium_fraction": 0.3333333333333333,
+  "null_closed_c2_fraction": NaN,
+  "final_closed_c2_fraction": 0.6666666666666666,
+  "final_closed_medium_fraction": 0.3333333333333333,
+  "all_time_best_score": 0.9990789484131797,
+  "all_time_best_recurrent_flux_entropy": 2.9823024771769724,
+  "by_ensemble": [
+    {
+      "rule_ensemble": "c2xor",
+      "rows": 2,
+      "cols": 2,
+      "n": 50,
+      "closed_c2_fraction": 1.0,
+      "closed_medium_fraction": 0.0,
+      "mean_quotient_score": 0.9988595247138896,
+      "mean_det_accuracy": 1.0,
+      "mean_link_schedule": 1.0,
+      "mean_flux_schedule": 1.0,
+      "mean_recurrent_flux_entropy_bits": 0.0,
+      "mean_nontrivial_flux_fraction": 0.50067138671875
+    },
+    {
+      "rule_ensemble": "copy",
+      "rows": 2,
+      "cols": 2,
+      "n": 50,
+      "closed_c2_fraction": 1.0,
+      "closed_medium_fraction": 1.0,
+      "mean_quotient_score": 0.9989488332761755,
+      "mean_det_accuracy": 1.0,
+      "mean_link_schedule": 1.0,
+      "mean_flux_schedule": 1.0,
+      "mean_recurrent_flux_entropy_bits": 2.99015378362063,
+      "mean_nontrivial_flux_fraction": 0.50064453125
+    },
+    {
+      "rule_ensemble": "random",
+      "rows": 2,
+      "cols": 2,
+      "n": 50,
+      "closed_c2_fraction": 0.0,
+      "closed_medium_fraction": 0.0,
+      "mean_quotient_score": 0.23967933275833378,
+      "mean_det_accuracy": 0.1165625,
+      "mean_link_schedule": 4.8828125e-06,
+      "mean_flux_schedule": 4.8828125e-06,
+      "mean_recurrent_flux_entropy_bits": 2.9876146848610396,
+      "mean_nontrivial_flux_fraction": 0.49997314453125
+    }
+  ]
+}

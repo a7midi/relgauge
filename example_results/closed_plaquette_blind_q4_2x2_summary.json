@@ -1,0 +1,27 @@
+{
+  "verdict": "NO CLOSED SCC C2 QUOTIENT SIGNAL in this regime",
+  "n_rows": 12220,
+  "closed_c2_fraction": 0.0,
+  "closed_medium_fraction": 0.0,
+  "null_closed_c2_fraction": 0.0,
+  "final_closed_c2_fraction": 0.0,
+  "final_closed_medium_fraction": 0.0,
+  "all_time_best_score": 0.24230719775440823,
+  "all_time_best_recurrent_flux_entropy": 2.9931976932936757,
+  "by_ensemble": [
+    {
+      "rule_ensemble": "random",
+      "rows": 2,
+      "cols": 2,
+      "n": 12220,
+      "closed_c2_fraction": 0.0,
+      "closed_medium_fraction": 0.0,
+      "mean_quotient_score": 0.23963604139333733,
+      "mean_det_accuracy": 0.11642141388988339,
+      "mean_link_schedule": 1.5523507825286417e-05,
+      "mean_flux_schedule": 1.7421491407528643e-05,
+      "mean_recurrent_flux_entropy_bits": 2.9862417258363965,
+      "mean_nontrivial_flux_fraction": 0.5000051745026084
+    }
+  ]
+}

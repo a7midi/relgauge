@@ -1,0 +1,18 @@
+{
+  "verdict": "CERTIFIED SHARED-SQUARE HOLONOMY: saved winners remain exact under exhaustive source certification",
+  "n_rows": 50,
+  "certified_valid_fraction": 1.0,
+  "hidden_overwrite_fraction": 1.0,
+  "nontrivial_holonomy_fraction": 1.0,
+  "gauge_covariance_success_fraction": 1.0,
+  "c2_fraction": 1.0,
+  "group_counts": {
+    "C2": 50
+  },
+  "delta_type_counts": {
+    "cycle_2": 50
+  },
+  "min_classes_counts": {
+    "2": 50
+  }
+}

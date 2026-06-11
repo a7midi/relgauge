@@ -1,0 +1,40 @@
+{
+  "verdict": "OBSERVER-RELATIVE C2 BOUNDARY SIGNAL",
+  "n_boundary_rows": 402,
+  "n_proper_observer_rows": 382,
+  "n_gluing_rows": 739,
+  "full_system_boundary_empty": true,
+  "proper_nontrivial_boundary_fraction": 0.17801047120418848,
+  "proper_binary_c2_like_fraction": 0.17801047120418848,
+  "mean_boundary_quotient_size": 1.1780104712041886,
+  "mean_boundary_quotient_entropy_bits": 0.1506461270192588,
+  "mean_boundary_mi_bits": 0.0,
+  "mean_live_site_fraction": 0.05953627524308153,
+  "raw_cancellation_fraction": 1.0,
+  "mean_gluing_residual_entropy_bits": 0.0,
+  "defect_candidate_fraction": 0.0,
+  "by_ensemble": [
+    {
+      "rule_ensemble": "random_scc",
+      "n_observers": 382,
+      "nontrivial_boundary_fraction": 0.17801047120418848,
+      "binary_c2_like_fraction": 0.17801047120418848,
+      "mean_boundary_quotient_size": 1.1780104712041886,
+      "mean_boundary_quotient_entropy_bits": 0.1506461270192588,
+      "mean_boundary_mi_bits": 0.0,
+      "mean_live_site_fraction": 0.05953627524308153,
+      "mean_effective_cycle_rank": 0.002617801047120419
+    }
+  ],
+  "gluing_by_ensemble": [
+    {
+      "rule_ensemble": "random_scc",
+      "n_pairs": 739,
+      "raw_cancellation_fraction": 1.0,
+      "mean_gluing_accuracy": 1.0,
+      "mean_residual_entropy_bits": 0.0,
+      "defect_candidate_fraction": 0.0,
+      "mean_seam_edge_count": 2.9986468200270635
+    }
+  ]
+}
